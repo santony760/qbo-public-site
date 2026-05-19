@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Connecting to QuickBooks…</title></head>
+<body style="font-family:sans-serif;max-width:480px;margin:60px auto;text-align:center;">
+<p>Completing QuickBooks authorization, please wait…</p>
+<script>
+  // Relay the OAuth callback from Intuit to the local ERP app.
+  // Intuit lands here with ?code=...&state=...&realmId=... in the query string.
+  // We immediately forward those params to the locally running Flask app.
+  window.location.replace('http://localhost:5000/qbo/callback' + window.location.search);
+</script>
+<noscript>
+  <p>JavaScript is required to complete QuickBooks authorization.
+     Please enable JavaScript and try again.</p>
+</noscript>
+</body></html>
